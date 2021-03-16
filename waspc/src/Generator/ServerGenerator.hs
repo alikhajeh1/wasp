@@ -54,7 +54,7 @@ genPackageJson wasp waspDeps = C.makeTemplateFD
      , "depsChunk" .= toPackageJsonDependenciesString (resolvedWaspDeps ++ resolvedUserDeps)
      , "nodeVersion" .= nodeVersionAsText
      , "startProductionScript" .= concat
-         [ if not (null $ Wasp.getPSLEntities wasp) then "npm run db-migrate && " else ""
+         [ if not (null $ Wasp.getPSLEntities wasp) then "npm run db-migrate-prod && " else ""
          , "NODE_ENV=production node ./src/server.js"
          ]
      ])
@@ -74,7 +74,7 @@ waspNpmDeps = ND.fromList
     , ("debug", "~2.6.9")
     , ("express", "~4.16.1")
     , ("morgan", "~1.9.1")
-    , ("@prisma/client", "2.12.1")
+    , ("@prisma/client", "2.18.0")
     , ("jsonwebtoken", "^8.5.1")
     , ("secure-password", "^4.0.0")
     ]
