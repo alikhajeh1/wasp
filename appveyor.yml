@@ -6,6 +6,9 @@ skip_commits:
   message: /\[skip ci\]/
 
 branches:
+
+
+
   only:
     - master # This will still build PRs.
 
