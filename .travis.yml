@@ -1,3 +1,4 @@
+
 # This ensures only commits on master, PRs towards master, and all tags are built.
 # Otherwise, build does not start.
 if: branch = master OR tag IS present
